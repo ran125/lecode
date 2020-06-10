@@ -1,1 +1,29 @@
 
+   var num1 = [1, 3, 5, 7, 8, 9, 10]; //m
+        var num2 = [2, 5, 7, 9]; //n
+        insertNum(num1,num2);
+        //有序数组 num2 插入num1 
+        function insertNum(num1, num2) {
+            var num = [];
+            var num1Index = 0;
+            var num2Index = 0;
+            var m = num1.length;
+            var n = num2.length;
+            // 创建新数组 存放插入值后的结果
+            //双指针
+            //循环遍历num1,指针i 的取值 i= m+n
+            for (let i = 0; i < m + n; i++) {
+                //需要有指针 num1Index  添加一次num1 的话 走一次
+                if (num1[num1Index] > num2[num2Index]) {
+                    num[i] = num2[num2Index];
+                    num2Index++;
+                    //此时 开始放入num2[j]的值到新数组中,此时的num[i],停留  取出下一个num[j]继续判断num1[i]和num[j]
+                } else {
+                    num[i] = num1[num1Index];
+                    num1Index++;
+                }
+            }
+            console.log(num);
+            //循环遍历num2 ,指针j 
+            //比较
+        }
